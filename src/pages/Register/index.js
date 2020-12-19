@@ -38,7 +38,7 @@ function Register(){
             return setUser({...user, err: "Password didn't match.", success: ""})
         }
         try{
-            const res = await axios.post("http://localhost:4000/v1/user/register",{
+            const res = await axios.post("http://skinease.herokuapp.com/v1/user/register",{
                 name,email,password
             })
 

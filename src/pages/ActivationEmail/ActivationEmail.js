@@ -12,7 +12,7 @@ function ActivationEmail() {
         if(activation_token){
             const activationEmail = async() => {
                 try{
-                    const res = await axios.post("http://localhost:4000/v1/user/activation",{activation_token})
+                    const res = await axios.post("http://skinease.herokuapp.com/v1/user/activation",{activation_token})
                     setSuccess(res.data.msg)
                 }catch(err){
                     err.response.data.msg && setErr(err.response.data.msg)

@@ -44,7 +44,7 @@ const TambahDataForm = () => {
   }
 
   const handlerSubmit = async () =>{
-    await axios.post("http://localhost:4000/v1/dataTraining/ptraining",inputGejalaBobots)
+    await axios.post("http://skinease.herokuapp.com/v1/dataTraining/ptraining",inputGejalaBobots)
     alert("data berhasil diinput")
     history.push("/datatraining")
   }

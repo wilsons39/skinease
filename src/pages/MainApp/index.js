@@ -16,7 +16,7 @@ const MainApp = () => {
         const firstLogin = localStorage.getItem('firstLogin')
         if(firstLogin){
           const getToken = async () => {
-            const res = await axios.post('http://localhost:4000/v1/user/refresh_token' )
+            const res = await axios.post('http://skinease.herokuapp.com/v1/user/refresh_token' )
             console.log(res)
           }
           getToken()
