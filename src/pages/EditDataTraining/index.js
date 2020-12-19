@@ -33,7 +33,7 @@ const EditDataTraining = () => {
     const getDataTrainingById = async () => {
         const path = window.location.pathname.split('/')
         const id = path[path.length - 1]
-        await axios.get("http://skinease.herokuapp.com/v1/dataTraining/training/" + id)
+        await axios.get("https://skinease.herokuapp.com/v1/dataTraining/training/" + id)
         .then(res => {
             setDataTrainingById(res.data.data)
             setInputList(res.data.data.gejalabobot)
@@ -76,7 +76,7 @@ const EditDataTraining = () => {
         const id = path[path.length - 1]
         console.log(tampungEditPenyakit)
         let req = {
-            url : "http://skinease.herokuapp.com/v1/dataTraining/utraining/" + id,
+            url : "https://skinease.herokuapp.com/v1/dataTraining/utraining/" + id,
             method: 'PUT',
             data: tampungEditPenyakit
           }

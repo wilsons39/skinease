@@ -27,7 +27,7 @@ const DataTesting = () => {
     },[newDataTestings])
 
     const getDataTraining = async () => {
-        await axios.get("http://skinease.herokuapp.com/v1/dataTraining/training")
+        await axios.get("https://skinease.herokuapp.com/v1/dataTraining/training")
         .then(res => {
             setDataTraining(res.data.data)
         })

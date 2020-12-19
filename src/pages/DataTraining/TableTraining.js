@@ -8,7 +8,7 @@ import "react-confirm-alert/src/react-confirm-alert.css"
 function TableTraining({dataTraining,refresh}) {
 
     async function deleteProduk(){
-        await axios.delete("http://skinease.herokuapp.com/v1/dataTraining/dtraining/" + dataTraining._id)
+        await axios.delete("https://skinease.herokuapp.com/v1/dataTraining/dtraining/" + dataTraining._id)
         return refresh()
     }
 
