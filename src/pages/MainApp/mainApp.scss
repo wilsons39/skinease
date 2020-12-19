@@ -1,0 +1,23 @@
+* {
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.main-app-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  margin: 0 auto;
+  .content-wrapper {
+    flex: 1;
+  }
+}
+
+.loginDialog {
+  height: 4000px;
+}
+
+/*--------------------Login-----------------------*/
+@import url("../Login/login.css");

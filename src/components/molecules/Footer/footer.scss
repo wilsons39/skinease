@@ -1,0 +1,26 @@
+.social-wrapper {
+  display: flex;
+  padding: 1vh 0 1vh 4vh;
+}
+
+.icon-wrapper {
+  padding: 5px;
+  border-radius: 40px;
+  margin: 0px 10px;
+  .icon-medsos {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+  }
+}
+
+.hr-wrapper {
+  width: 97%;
+  background-color: #666666;
+  height: 0.1vh;
+  border: none;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+}
