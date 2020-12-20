@@ -6,7 +6,7 @@ const Home = () => {
     return (
         <div>
             <Button variant="contained" color="primary">
-                udh di deploy
+                udh di deploys
             </Button>
             <p>New User ? <Link to="/testData">Register</Link></p>
             <p>home</p>
