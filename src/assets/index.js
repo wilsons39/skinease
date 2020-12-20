@@ -6,5 +6,6 @@ import YoutubeLogo from './icons/youtube logo.png'
 import LinkedinLogo from './icons/linkedin logo.png'
 import BehanceLogo from './icons/behance logo.png'
 import music from './music/videoplayback.mp3'
+import happy29 from './images/29.-Happy.png'
 
-export {SkineaseLogo,FacebookLogo,TwitterLogo,InstagramLogo,YoutubeLogo,LinkedinLogo,BehanceLogo,music}
+export {SkineaseLogo,FacebookLogo,TwitterLogo,InstagramLogo,YoutubeLogo,LinkedinLogo,BehanceLogo,music,happy29}
