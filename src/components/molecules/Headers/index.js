@@ -21,17 +21,17 @@ function Headers(){
     return(
         <header>
             <div className="logo">
-                <h1><Link to="/">Skinease</Link></h1>
+                <h1><Link style={{textDecoration:"none"}} to="/">Skinease</Link></h1>
             </div>
             <ul>
-                <li><Link to="/"><i>HOME</i></Link></li>
-                <li><Link to="/datatraining"><i>DATA TRAINING</i></Link></li>
-                <li><Link to="/datatesting"><i>DATA TESTING</i></Link></li>
-                <li><Link to="/tambahdata"><i>TAMBAH DATA</i></Link></li>
+                <li><Link style={{textDecoration:"none"}} to="/"><i>HOME</i></Link></li>
+                <li><Link style={{textDecoration:"none"}} to="/datatraining"><i>DATA TRAINING</i></Link></li>
+                <li><Link style={{textDecoration:"none"}} to="/datatesting"><i>DATA TESTING</i></Link></li>
+                <li><Link style={{textDecoration:"none"}} to="/tambahdata"><i>TAMBAH DATA</i></Link></li>
                 {
                     isLogged
                     ? userLink()
-                    : <li><Link to="/login">LOGIN</Link></li>
+                    : <li><Link style={{textDecoration:"none"}} to="/login">LOGIN</Link></li>
                 }
             </ul>
         </header>
