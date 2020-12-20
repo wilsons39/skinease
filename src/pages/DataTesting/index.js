@@ -1,13 +1,75 @@
 import React, {useEffect, useState} from 'react'
-import {Table,TableBody,TableCell,TableContainer,TableHead,TableRow,Button,Checkbox,FormControlLabel,FormGroup,IconButton,Collapse,TextField,Box} from '@material-ui/core'
+import {Table,TableBody,TableCell,TableContainer,
+    TableHead,TableRow,Button,Checkbox,FormControlLabel,
+    FormGroup,IconButton,Collapse,TextField,Box,
+    Grid,Typography,Card,CardContent,makeStyles} from '@material-ui/core'
 import axios from "axios"
 import _ from "lodash" 
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
-import { makeStyles } from '@material-ui/core/styles';
 import RemoveIcon from '@material-ui/icons/Remove'
 import AddIcon from '@material-ui/icons/Add'
-import { AssignmentInd } from '@material-ui/icons'
+import { AssignmentInd} from '@material-ui/icons'
+import SearchIcon from '@material-ui/icons/Search'
+import InputAdornment from '@material-ui/core/InputAdornment';
+import {reporting46} from '../../assets'
+
+const useStyles = makeStyles({
+    body : {
+        paddingTop: "5vh",
+        paddingBottom: "5vh"
+    },
+    containers: {
+        paddingLeft: "5vh",
+        paddingRight: "5vh"
+    },
+    searchStyle: {
+        paddingTop: "10vh"
+    },
+    cardStyle: {
+        boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+        backgroundColor: "white",
+        padding: "2vh"
+    },
+    tableContainerStyle: {
+        marginTop: "5vh"
+    },
+    gridTableHeadStyle: {
+        backgroundColor: "#282c34",
+        marginTop: "5vh",
+        padding: "3vh",
+        color: "white"
+    },
+    notchedOutline: {
+        borderWidth: '1px',
+        borderColor: 'white !important',
+        color: "white"
+    },
+    cssFocused: {},
+    cssLabel: {
+        color : 'white'
+    },
+    cssOutlinedInput: {
+        color: "white"
+    },
+    buttonStyle: {
+        boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+        marginTop: "2vh",
+        marginBottom: "2vh",
+        marginLeft: "2vh"
+    },
+    typographyNoteStyle: {
+        marginBottom: "2vh"
+    },
+    imageStyle: {
+        maxWidth: "200px"
+    },
+    typographyTableTitleStyle: {
+        padding: "1vh"
+    }
+})
+
+
 
 const DataTesting = () => {
     const [dataTrainings,setDataTraining] = useState([])
@@ -17,6 +79,7 @@ const DataTesting = () => {
     const [tampungHasil, setTampungHasil] = useState([])
     const [open, setOpen] = React.useState(false);
     const [querySearch, setQuerySearch] = useState("")
+    const classes = useStyles()
 
     useEffect(() => {
         getDataTraining()
@@ -97,7 +160,7 @@ const DataTesting = () => {
         let benar = 0
         setTampungHasil([])
         if(newDataTestings.length === 0){
-            return null
+            return alert("data gejala tidak boleh 0 (kosong)")
         }
         for(let l=0;l<newDataTestings.length;l++){ //inputan user
             for(let i=0;i<dataTrainings.length;i++){  //= 9
@@ -221,22 +284,61 @@ const DataTesting = () => {
     }
 
     return (
-        <div onLoad={showDataTesting()}>
+        <div className={classes.body} onLoad={showDataTesting()}>
+            <Grid className={classes.containers} container>
+                <Grid item xs={2}>
+                    <img className={classes.imageStyle} src={reporting46}></img>
+                </Grid>
+                <Grid item xs={10}>
+                    <Card className={classes.cardStyle}>
+                        <CardContent>
+                            <Typography className={classes.typographyNoteStyle} variant="h5">Note!!!</Typography>
+                            <Typography variant="body1">
+                                Semua gejala yang tersedia didapat dari gejala-gejala yang ada 
+                                pada data penyakit yang telah di filter. 
+                                Sehingga tidak ada gejala yang sama muncul lebih dari 1 kali
+                            </Typography>
+                        </CardContent>
+                    </Card>
+                </Grid>
+            </Grid>
+            <Grid container className={classes.gridTableHeadStyle}>
+                    <Grid item xs={6}>
+                        <Typography className={classes.typographyTableTitleStyle} variant="h4">Data Testing</Typography>
+                    </Grid>
+                    <Grid item xs={6}>
+                    <TextField                              
+                        id="outlined-basic"
+                        label="Search Gejala" 
+                        variant="outlined"
+                        name="Search"
+                        type="search"
+                        value ={querySearch}     
+                        onChange = {(e) => setQuerySearch(e.target.value)}
+                        InputLabelProps={{
+                            classes: {
+                                root: classes.cssLabel,
+                                focused: classes.cssFocused,
+                            },
+                        }}
+                        InputProps={{
+                            classes: {
+                                root: classes.cssOutlinedInput,
+                                focused: classes.cssFocused,
+                                notchedOutline: classes.notchedOutline,
+                            },
+                            startAdornment: (
+                                <InputAdornment position="start">
+                                <SearchIcon />
+                                </InputAdornment>
+                            ),
+                            }}
+                        />
+                    </Grid>
+                </Grid>
             <TableContainer>
                 <Table>
                     <TableHead>
-                        <TableRow>
-                            <TableCell>Data Testing</TableCell>
-                        </TableRow>
-                        <TableRow>
-                            <TextField 
-                            label="Search Gejala" 
-                            variant="filled"
-                            name="Search"
-                            value ={querySearch}
-                            onChange = {(e) => setQuerySearch(e.target.value)}
-                            />
-                        </TableRow>
                     </TableHead>
                     <TableBody>
                         <TableRow>
@@ -291,19 +393,19 @@ const DataTesting = () => {
                     </TableBody>
                 </Table>
             </TableContainer>
-            <Button variant="contained" color="primary" type="submit" onClick={perhitungan}>Send</Button>
+            <Button className={classes.buttonStyle} variant="contained" color="primary" type="submit" onClick={perhitungan}>Send</Button>
 {/* -------------------------------------------------------------------------- */}
             <TableContainer>    
                 <Table>     
-                    <TableHead>             
+                    <TableHead style={{backgroundColor:"#282c34"}}>             
                         <TableRow>
                             <TableCell component="th" scope="row" ></TableCell>
-                            <TableCell>Pembilang</TableCell>
-                            <TableCell>Penyebut</TableCell>
-                            <TableCell>Total</TableCell>
-                            <TableCell>Penyakit</TableCell>
-                            <TableCell>Gejala</TableCell>
-                            <TableCell>Bobot</TableCell>
+                            <TableCell style={{color:"white"}}>Penyakit</TableCell>
+                            <TableCell style={{color:"white"}}>Gejala</TableCell>
+                            <TableCell style={{color:"white"}}>Bobot Penyebut</TableCell>
+                            <TableCell style={{color:"white"}}>Pembilang</TableCell>
+                            <TableCell style={{color:"white"}}>Penyebut</TableCell>
+                            <TableCell style={{color:"white"}}>Total</TableCell>
                         </TableRow>     
                     </TableHead>
                     {tampungHasil.map(final => (                   
@@ -314,9 +416,6 @@ const DataTesting = () => {
                                     {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
                                 </IconButton>
                             </TableCell>
-                            <TableCell>{final.pembilang}</TableCell>
-                            <TableCell>{final.penyebut}</TableCell>
-                            <TableCell>{final.total}</TableCell>
                             <TableCell>{final.penyakit}</TableCell>
                             <TableCell>
                                 {final.gejalaPenyakit.map(finals =>(
@@ -332,6 +431,9 @@ const DataTesting = () => {
                                     </div>
                                 ))}
                             </TableCell>
+                            <TableCell>{final.pembilang}</TableCell>
+                            <TableCell>{final.penyebut}</TableCell>
+                            <TableCell>{final.total}</TableCell>
                         </TableRow>                    
                         <Collapse in={open} timeout="auto" unmountOnExit>
                             <Box margin={1}>
@@ -339,7 +441,7 @@ const DataTesting = () => {
                                     <TableHead>
                                         <TableRow>
                                             <TableCell>Gejala Sama</TableCell>
-                                            <TableCell>Bobot</TableCell>
+                                            <TableCell>Bobot Pembilang</TableCell>
                                         </TableRow>
                                     </TableHead>
                                     <TableBody>

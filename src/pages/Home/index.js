@@ -56,7 +56,7 @@ const Home = () => {
                         <Typography variant="h5">
                             Skinease adalah website<br />
                             yang dapat digunakan untuk <br />
-                            mendeteksi penyakit kulit memalui gejala <br />
+                            mendeteksi penyakit kulit melaui gejala <br />
                             yang diinputkan oleh user pada tab DataTesting 
                         </Typography>
                     </Grid>

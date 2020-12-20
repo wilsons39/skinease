@@ -25,13 +25,13 @@ function Headers(){
             </div>
             <ul>
                 <li><Link style={{textDecoration:"none"}} to="/"><i>HOME</i></Link></li>
-                <li><Link style={{textDecoration:"none"}} to="/datatraining"><i>DATA TRAINING</i></Link></li>
+                <li><Link style={{textDecoration:"none"}} to="/datatraining"><i>DATA PENYAKIT & GEJALA</i></Link></li>
                 <li><Link style={{textDecoration:"none"}} to="/datatesting"><i>DATA TESTING</i></Link></li>
                 <li><Link style={{textDecoration:"none"}} to="/tambahdata"><i>TAMBAH DATA</i></Link></li>
                 {
                     isLogged
                     ? userLink()
-                    : <li><Link style={{textDecoration:"none"}} to="/login">LOGIN</Link></li>
+                    : <li><Link style={{textDecoration:"none"}} to="/login"><i>LOGIN</i></Link></li>
                 }
             </ul>
         </header>
