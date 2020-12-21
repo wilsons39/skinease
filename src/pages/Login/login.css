@@ -1,6 +1,9 @@
 .login_page {
   max-width: 500px;
+  margin-bottom: 20vh;
   margin: auto;
+  margin-top: 5vh;
+  margin-bottom: 22.5vh !important;
   color: #444;
   padding: 0 15px;
 }

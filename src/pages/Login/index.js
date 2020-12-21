@@ -57,7 +57,7 @@ function Login(){
                 </div>
                 <div className="row">
                     <button type="submit">Login</button>
-                    <Link to="/forgot_password">Forgot your password</Link>
+                   
                 </div>
             </form>
 
@@ -67,3 +67,4 @@ function Login(){
 }
 
 export default Login
+

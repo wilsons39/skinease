@@ -19,11 +19,21 @@ const Footer = () => {
                     <a href="https://www.facebook.com/wilsonsaputras38/">
                     <Icon img={FacebookLogo} />
                     </a>
-                    <Icon img={TwitterLogo} />
-                    <Icon img={InstagramLogo} />
-                    <Icon img={YoutubeLogo} />
-                    <Icon img={LinkedinLogo} />
-                    <Icon img={BehanceLogo} />
+                    <a href="https://twitter.com/wilsonsaputra_">
+                        <Icon img={TwitterLogo} />
+                    </a>
+                    <a href="https://www.instagram.com/wilsonsaputra_/?hl=id">
+                        <Icon img={InstagramLogo} />
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=Jwb04bh3mdk">
+                        <Icon img={YoutubeLogo} />
+                    </a>
+                    <a href="https://www.linkedin.com/in/wilson-saputra-4a7430187/">
+                        <Icon img={LinkedinLogo} />
+                    </a>
+                    <a href="https://www.behance.net/wilsonsaputra_">
+                        <Icon img={BehanceLogo} />
+                    </a>
                 </div>
             </AppBar>
         </div>
