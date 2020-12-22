@@ -39,35 +39,8 @@ function TableTraining({dataTraining,refresh}) {
         )
     }
 
-    function showButton(){
-        if(dataTraining.penyakit === "Tinea Versikolor (Panu)" ||
-        dataTraining.penyakit === "Tinea Nigra Palmaris" ||
-        dataTraining.penyakit === "Tinea Kapitis Gray Patch Ring worm" ||
-        dataTraining.penyakit === "Tinea Kapitis Black Dot Ring Worm" ||
-        dataTraining.penyakit === "Tinea Kapitis Kerion" ||
-        dataTraining.penyakit === "Tinea Kapitis Favosa" ||
-        dataTraining.penyakit === "Tinea Barbae & Sikosis Barbae" ||
-        dataTraining.penyakit === "Tinea Korporis" ||
-        dataTraining.penyakit === "Fikomikosis Subkutis"){
-            return (
-                <div>
-
-                </div>
-            )
-        }else{
-            return (
-                <div>
-                    <TableCell>
-                        <Link to={"/edit/" + dataTraining._id}>
-                            <Button variant="contained" color="primary">Edit</Button>
-                        </Link>
-                    </TableCell>
-                    <TableCell> 
-                        <Button variant="contained" color="secondary" onClick={deleteConfirm}>Delete</Button>
-                    </TableCell>
-                </div>
-            )
-        }
+    function numberGenerate(){
+        
     }
 
     return (
@@ -75,7 +48,15 @@ function TableTraining({dataTraining,refresh}) {
             <TableCell>{dataTraining._id}</TableCell>
             <TableCell>{dataTraining.penyakit}</TableCell>
             <TableCell>{gejalaBobotJoin()}</TableCell>
-            {showButton()}
+            <TableCell>
+                
+                <Link to={"/edit/" + dataTraining._id}>
+                    <Button variant="contained" color="primary">Edit</Button>
+                </Link>
+            </TableCell>
+            <TableCell> 
+                <Button variant="contained" color="secondary" onClick={deleteConfirm}>Delete</Button>
+            </TableCell>
         </TableRow>
     )
 }

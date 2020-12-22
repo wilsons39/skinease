@@ -30,6 +30,9 @@ function Login(){
         try{
             const res = await axios.post("https://skinease.herokuapp.com/v1/user/login",{email,password})
             setUser({...user, err: "", success: res.data.msg})
+            if(user.email === "wilsonsaputras39@gmail.com"){
+                return history.push("/dataTrainingAdminSkinease2020")
+            }
 
             localStorage.setItem("firstLogin", true)
 

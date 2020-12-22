@@ -1,6 +1,6 @@
 import React from "react"
 import {Switch , Route} from "react-router-dom"
-import {Home,Login,Register,MainApp,DataTesting,DataTraining,TambahData,EditDataTraining,ActivationEmail} from "../../../pages"
+import {Home,Login,Register,MainApp,DataTesting,DataTraining,TambahData,EditDataTraining,ActivationEmail,DataTrainingAdmin} from "../../../pages"
 
 function Body(){
     return(
@@ -10,6 +10,9 @@ function Body(){
             </Switch>
             <Switch>
                 <Route path="/dataTraining" component={DataTraining} exact />
+            </Switch>
+            <Switch>
+                <Route path="/dataTrainingAdminSkinease2020" component={DataTrainingAdmin} exact/>
             </Switch>
             <Switch>
                 <Route path="/dataTesting" component={DataTesting} exact />

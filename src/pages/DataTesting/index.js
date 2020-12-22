@@ -177,7 +177,6 @@ const DataTesting = () => {
                         formula = tampung / tampung2
                         console.log("formula",` ${tampung} + ${(newDataTestings[l].bobot * sama)}/${tampung2} + ${newDataTestings[l].bobot}`)
                         result.push({
-                            // formula : ` ${tampung} + ${(newDataTestings[l].bobot * sama)}/${tampung2} + ${newDataTestings[l].bobot}` ,
                             formula : formula,
                             penyakit : dataTrainings[i].penyakit,
                             gejala : dataTrainings[i].gejalabobot[j].gejala,
@@ -185,9 +184,6 @@ const DataTesting = () => {
                             kondisi : newDataTestings[l].gejala === dataTrainings[i].gejalabobot[j].gejala,
                             total : tampung
                         })
-                        // result = tampung / tampung2
-                        // console.log("123",result)
-                        // console.log("hasil",tampung)
                     }else if(condition === false){
                         let formula = null
                         tampung2 =0
@@ -197,7 +193,7 @@ const DataTesting = () => {
                         formula = tampung / tampung2
                         console.log("formula2",` ${tampung} + ${(newDataTestings[l].bobot * sama)}/${tampung2} + ${newDataTestings[l].bobot}`)
                         result.push({
-                            // formula : ` ${tampung} + ${(newDataTestings[l].bobot * sama)}/${tampung2} + ${newDataTestings[l].bobot}` ,
+                           
                             formula : formula,
                             penyakit : dataTrainings[i].penyakit,
                             gejala : dataTrainings[i].gejalabobot[j].gejala,
@@ -206,7 +202,6 @@ const DataTesting = () => {
                             total : tampung
                         })
                     }
-                    //console.log("tampung ",newDataTestings[l].gejala,dataTrainings[i].gejalabobot[j].gejala,newDataTestings[l].gejala !== dataTrainings[i].gejalabobot[j].gejala)
                 } 
             }
         }
@@ -216,9 +211,7 @@ const DataTesting = () => {
         let finalResult = []
         let gejalaPembilang =[]
         result = _.chain(result)
-        // Group the elements of Array based on `color` property
         .groupBy("penyakit")
-        // `key` is group's name (color), `value` is the array of objects
         .map((value, key) => ({ 
             penyakit: key,
             value: value
@@ -238,25 +231,16 @@ const DataTesting = () => {
             let finalPenyebut = 0
             let finalPembilang = 0
             let finalDataTesting = [...newDataTestings]
-            
-            // let gejalaKumpul = ""
+
             for(let j=0;j<penyebut[i].gejalabobot.length;j++){
                 finalPenyebut = finalPenyebut + penyebut[i].gejalabobot[j].bobot
-                // if(finalDataTesting.some(data => data.gejala === penyebut[i].gejalabobot[j].gejala)){
-                //     finalDataTesting = finalDataTesting.filter(data => data.gejala !== penyebut[i].gejalabobot[j].gejala)
-                // }
+ 
             }
             console.log("finalDataTesting",finalDataTesting)
-            // for(let x=0; x<finalDataTesting.length;x++){
-            //     finalPenyebut = finalPenyebut + finalDataTesting[x].bobot
-            // }
+
             for(let l=0;l<pembilang[i].value.length;l++){
                 finalPembilang = finalPembilang + pembilang[i].value[l].bobot
-                // gejalaKumpul = pembilang[i].value[l].gejala
             }
-            // gejalaPembilang.push({
-            //     gejala : gejalaKumpul
-            // })
             if(penyebut)
                 finalResult.push({
                     pembilang : finalPembilang,

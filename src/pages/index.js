@@ -8,5 +8,6 @@ import TambahData from './TambahData'
 import EditDataTraining from './EditDataTraining'
 import TestData from './TestData'
 import ActivationEmail from './ActivationEmail/ActivationEmail'
+import DataTrainingAdmin from './DataTrainingAdmin'
 
-export {Home,Login,Register,MainApp,DataTesting,DataTraining,TambahData,EditDataTraining,TestData,ActivationEmail};
+export {Home,Login,Register,MainApp,DataTesting,DataTraining,TambahData,EditDataTraining,TestData,ActivationEmail,DataTrainingAdmin};
