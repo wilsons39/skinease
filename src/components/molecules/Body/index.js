@@ -12,7 +12,7 @@ function Body(){
                 <Route path="/dataTraining" component={DataTraining} exact />
             </Switch>
             <Switch>
-                <Route path="/dataTrainingAdminSkinease2020" component={DataTrainingAdmin} exact/>
+                <Route path="/dataTrainingAdmin" component={DataTrainingAdmin} exact />
             </Switch>
             <Switch>
                 <Route path="/dataTesting" component={DataTesting} exact />

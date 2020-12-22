@@ -72,7 +72,6 @@ function TableTraining({dataTraining,refresh}) {
 
     return (
         <TableRow key={dataTraining._id}>
-            <TableCell>{dataTraining._id}</TableCell>
             <TableCell>{dataTraining.penyakit}</TableCell>
             <TableCell>{gejalaBobotJoin()}</TableCell>
             {showButton()}

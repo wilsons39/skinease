@@ -16,7 +16,6 @@ export class DataTraining extends Component{
         .then(res => this.setState({
             dataTraining : res.data.data,
         }))
-        console.log(this.state.dataTraining)
     }
 
     render() {
@@ -34,7 +33,6 @@ export class DataTraining extends Component{
                     <Table>
                         <TableHead>
                             <TableRow>
-                                <TableCell>No</TableCell>
                                 <TableCell>Penyakit</TableCell>
                                 <TableCell>Gejala</TableCell>
                                 <TableCell align ="center" colSpan={2}>Aksi</TableCell>
